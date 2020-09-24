@@ -1,0 +1,13 @@
+<h1>facebook</h1>
+<p>Facebookを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。ケータイ、スマートフォンからもアクセスできます。</p>
+<%= form_with(model:@user, local:true)do |format| %>
+  <%= format.label :name %>
+  <%= format.text_field :name %>
+  <%= format.label :email %>
+  <%= format.text_field :email %>
+  <%= format.label :password %>
+  <%= format.password_field :password %>
+  <%= format.label :password_confirmation %>
+  <%= format.password_field :password_confirmation %>
+  <%= format.submit "新しいアカウントを作成" %>
+<% end %>
