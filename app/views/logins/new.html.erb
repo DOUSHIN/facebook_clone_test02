@@ -1,0 +1,9 @@
+<h1>facebook</h1>
+<p>Facebookを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。ケータイ、スマートフォンからもアクセスできます。</p>
+<%= form_with(scope: :login, url:logins_path, local:true)do |format| %>
+  <%= format.label :email %>
+  <%= format.text_field :email %>
+  <%= format.label :password %>
+  <%= format.password_field :password %>
+  <%= format.submit "ログイン" %>
+<% end %>
