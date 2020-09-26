@@ -1,0 +1,7 @@
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @picture.image.url %>
+</p>
+<%= link_to 'Edit', edit_picture_path(@picture.id) %>
+<%= link_to 'Back', pictures_path %>
