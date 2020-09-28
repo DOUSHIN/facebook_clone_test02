@@ -36,6 +36,7 @@ class PicturesController < ApplicationController
 
   def update
     if params[:back]
+      @picture = Picture.new
       render :new
     else
       @picture = Picture.find(params[:id])
