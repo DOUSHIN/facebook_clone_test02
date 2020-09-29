@@ -1,6 +1,8 @@
 <p>
   <strong>Content:</strong>
   <%= @picture.content %>
+  <strong>User:</strong>
+  <%= @picture.user.name %>
   <strong>Image:</strong>
   <%= image_tag @picture.image.url %>
 </p>

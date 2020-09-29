@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   before_validation { email.downcase! }
+  has_many :pictures
   has_secure_password
   validates :password, presence: true, length: { maximum: 6 }
   validates :name, presence: true, length: { maximum: 30 }
