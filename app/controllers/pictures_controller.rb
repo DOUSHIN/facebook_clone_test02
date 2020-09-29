@@ -19,6 +19,11 @@ class PicturesController < ApplicationController
 
   def edit
     @picture = Picture.find(params[:id])
+    if @picture.user_id == current_user.id
+      render :edit
+    else
+      redirect_to new_picture_path
+    end
   end
 
   def create

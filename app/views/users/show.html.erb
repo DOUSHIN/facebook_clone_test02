@@ -1,2 +1,5 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス：<%= @user.email %></p>
+<% if current_user %>
+  <%= link_to "Create Post", new_picture_path %>
+<% end %>
