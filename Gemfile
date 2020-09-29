@@ -18,6 +18,9 @@ group :development, :test do
   gem 'bcrypt','3.1.11'
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
