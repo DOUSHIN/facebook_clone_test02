@@ -2,7 +2,7 @@
 
 <h1>Feeds</h1>
 
-<table>
+<table class="container-fluid">
   <thead>
     <tr>
       <th>投稿一覧</th>
@@ -12,14 +12,14 @@
 
   <tbody>
     <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.content %></td>
-        <td><%= picture.user.name %></td>
-        <td><%= image_tag picture.image.url %></td>
+      <tr class="row">
+        <td class="col-md-4"><%= picture.content %></td>
+        <td class="col-md-4"><%= picture.user.name %></td>
+        <td class="col-md-1"><%= image_tag picture.image.url %></td>
         <% if picture.user_id == current_user.id %>
-          <td><%= link_to 'Show', picture %></td>
-          <td><%= link_to 'Edit', edit_picture_path(picture.id) %></td>
-          <td><%= link_to 'Destroy', picture_path(picture.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="col-md-1"><%= link_to 'Show', picture %></td>
+          <td class="col-md-1"><%= link_to 'Edit', edit_picture_path(picture.id) %></td>
+          <td class="col-md-1"><%= link_to 'Destroy', picture_path(picture.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

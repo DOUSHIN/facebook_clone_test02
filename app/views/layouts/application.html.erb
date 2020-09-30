@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Fbclone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="../../assets/stylesheet/application.css">
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", login_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_login_path %>
-    <% end %>
-    <%= yield %>
+    <header>
+      <ul class="left">
+        <li class="left-li"><a href="#">xx</a></li>
+        <li class="left-li"><a href="#">xx</a></li>
+      </ul>
+      <% if logged_in? %>
+      <ul class="right">
+        <li class="right-li"><%= link_to "Profile", user_path(current_user.id) %></li>
+        <li class="right-li"><%= link_to "Logout", login_path(current_user.id), method: :delete %></li>
+      </ul>
+      <% else %>
+      <ul class="right">
+        <li class="right-li"><%= link_to "Sign up", new_user_path %></li>
+        <li class="right-li"><%= link_to "Login", new_login_path %></li>
+      </ul>
+      <% end %>
+    </header>
+    <div class="main">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      <%= yield %>
+    </div>
+    <footer>
+      <p>株式会社DOUSHIN</p>
+      <p>© 2020 Copyright DOUSHIN Corp.</p>
+    </footer>
   </body>
 </html>
