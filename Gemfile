@@ -12,12 +12,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'bcrypt','3.1.11'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'bcrypt','3.1.11'
-  gem 'carrierwave'
-  gem 'mini_magick'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
