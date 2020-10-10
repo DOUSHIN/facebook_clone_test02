@@ -7,6 +7,12 @@ class PicturesController < ApplicationController
   def confirm
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
+    if @picture.image && @picture.image.url
+      render :confirm
+    else
+      flash[:empty] = '画像が添付されていません'
+      redirect_to new_picture_path
+    end
   end
 
   def index
