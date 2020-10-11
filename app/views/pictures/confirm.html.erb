@@ -1,6 +1,6 @@
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
   <p><%= @picture.content %></p>
-  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+  <%= image_tag(@picture.image.url, class:"sized") if @picture.image && @picture.image.url %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
   <%= form.submit "投稿する" %>

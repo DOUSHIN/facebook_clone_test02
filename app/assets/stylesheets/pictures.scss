@@ -7,5 +7,29 @@ table{
 
 td{
   border: 1px solid  gray;
-  width: 33%;
+}
+
+.main_table {
+	width:100%;
+	table-layout:fixed;
+}
+.main_table th ,.main_table td {
+	font-size:0.7em;
+}
+.main_table td img {
+	width:100%;
+}
+
+.field {
+  padding-top: 50px;
+  padding-left: 350px;
+}
+
+.actions {
+  padding-left: 350px;
+}
+
+img.sized {
+  max-width:100%;
+  height: auto;
 }

@@ -10,8 +10,8 @@ class PicturesController < ApplicationController
     if @picture.image && @picture.image.url
       render :confirm
     else
-      flash[:empty] = '画像が添付されていません'
-      redirect_to new_picture_path
+      flash.now[:empty] = '画像が添付されていません'
+      render :new
     end
   end
 
@@ -54,7 +54,7 @@ class PicturesController < ApplicationController
     else
       @picture = Picture.find(params[:id])
       @picture.update(picture_params)
-      flash[:hogehoge] = '編集完了'
+      flash[:notice] = '編集完了'
       redirect_to pictures_path
     end
   end

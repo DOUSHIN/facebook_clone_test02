@@ -13,10 +13,6 @@
 
   <body>
     <header>
-      <ul class="left">
-        <li class="left-li"><a href="#">xx</a></li>
-        <li class="left-li"><a href="#">xx</a></li>
-      </ul>
       <% if logged_in? %>
       <ul class="right">
         <li class="right-li"><%= link_to "Profile", user_path(current_user.id) %></li>

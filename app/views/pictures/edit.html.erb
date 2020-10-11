@@ -3,7 +3,7 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
     <%= form.label :image %>
-    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    <%= image_tag(@picture.image.url, class:"sized") if @picture.image && @picture.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
